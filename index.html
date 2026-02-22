@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MoodBite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease forwards;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <h2 class="logo">MoodBite</h2>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#try">Try</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="section">
+  <div class="hero">
+<span class="absolute
+             text-[190px]
+             md:text-[230px]
+             font-['Sacramento']
+             text-pink-300
+             opacity-20
+             rotate-[-5deg]
+             tracking-wide
+             select-none
+             pointer-events-none">
+  moodbite_ 🍰
+</span>
+
+  
+    <p class="hero-subtitle">
+        Discover food that matches your mood, budget & cravings — instantly.
+    </p>
+    <a href="#try" class="btn">Try Now</a>
+</div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="section">
+<h1>Our Features 🍴</h1>
+
+<div class="features-container">
+
+  <div class="feature-card">
+    <div class="icon">🍽️</div>
+    <h3>Mood-Based Suggestions</h3>
+    <p>Smart recommendations based on how you feel instantly.</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="icon">💸</div>
+    <h3>Budget Friendly</h3>
+    <p>Find delicious meals within your selected price range.</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="icon">🥗</div>
+    <h3>Veg / Non-Veg Filter</h3>
+    <p>Choose meals based on your food preference easily.</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="icon">👩‍🍳</div>
+    <h3>Recipe Guide</h3>
+    <p>Step-by-step home recipes included with suggestions.</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="icon">📍</div>
+    <h3>Nearby Restaurants</h3>
+    <p>Discover places near you serving your selected dish.</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="icon">⭐</div>
+    <h3>User Reviews</h3>
+    <p>Read and share real experiences with MoodBite.</p>
+  </div>
+
+</div>
+ 
+
+</section>
+
+<!-- TRY -->
+ <section id="try" class="min-h-screen flex flex-col justify-center items-center text-center">
+
+  <h1 class="text-4xl font-bold text-pink-500 mb-8">
+    Try MoodBite
+  </h1>
+
+  <div class="bg-white/70 backdrop-blur-lg shadow-2xl rounded-3xl p-10 w-[350px]">
+
+    <select id="mood" class="w-full mb-4 p-3 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400">
+      <option value="">Select Mood</option>
+      <option value="happy">Happy 😊</option>
+      <option value="sad">Sad 😢</option>
+      <option value="romantic">Romantic 💕</option>
+      <option value="energetic">Energetic 🔥</option>
+      <option value="tired">Tired 😴</option>
+      <option value="party">Party 🎉</option>
+      <option value="healthy">Healthy 🥗</option>
+    </select>
+
+    <select id="budget" class="w-full mb-4 p-3 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400">
+      <option value="">Select Budget</option>
+      <option value="low">Low</option>
+      <option value="mid">Mid</option>
+      <option value="high">Premium</option>
+    </select>
+
+    <select id="type" class="w-full mb-6 p-3 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400">
+      <option value="">Veg / Non-Veg</option>
+      <option value="veg">Veg</option>
+      <option value="nonveg">Non-Veg</option>
+    </select>
+
+    <button onclick="generateFood()"
+      class="w-full bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-xl font-semibold transition duration-300">
+      Generate 💗
+    </button>
+
+  </div>
+
+  <div id="result" class="mt-10"></div>
+
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <h1>User Experience 💗</h1>
+
+  <div class="experience-container">
+    <form id="feedbackForm" class="feedback-card">
+      <input type="text" id="username" placeholder="Your Name" required>
+
+      <div class="rating">
+        <span data-value="1">⭐</span>
+        <span data-value="2">⭐</span>
+        <span data-value="3">⭐</span>
+        <span data-value="4">⭐</span>
+        <span data-value="5">⭐</span>
+      </div>
+
+      <textarea id="feedback" placeholder="Share your experience..." required></textarea>
+      <button type="submit" class="btn">Submit Review</button>
+    </form>
+
+    <div id="reviews" class="reviews-grid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h1>Contact</h1>
+  <p>Email: support@moodbite.com</p>
+  <p>Phone: +91 98765 43210</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
